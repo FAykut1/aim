@@ -1,12 +1,12 @@
 // simple express js server
 
 // import express
+require('dotenv').config();
 const express = require('express');
 const fs = require('fs');
 // create an express app
 const app = express();
 // set the port
-const port = 3000;
 
 let scores = {};
 
@@ -46,6 +46,6 @@ app.get('/api/leaderboard', (req, res) => {
 });
 
 // start the server
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server is running at http://localhost:${process.env.PORT}`);
 });
