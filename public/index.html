@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.1/p5.min.js" integrity="sha512-jLPBEs8Tcpbj4AlLISWG0l7MbuIqp1cFBilrsy0BhvNUa0BLB4wVQeoL+93OYOdENFPKLOgrzb1Nytn+5N5y7g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.1/addons/p5.sound.min.js" integrity="sha512-WzkwpdWEMAY/W8WvP9KS2/VI6zkgejR4/KTxTl4qHx0utqeyVE0JY+S1DlMuxDChC7x0oXtk/ESji6a0lP/Tdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="particle.js"></script>
+    <script src="particle_system.js"></script>
+
+    <script src="target.js"></script>
+    <script src="index.js"></script>
+
+    <button id="mute" onclick="mute()">Mute</button>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+        }
+
+        canvas {
+            border: 1px solid white;
+        }
+
+        #mute {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 10px;
+            background-color: white;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+
+    </style>
+</body>
+</html>
