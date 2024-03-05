@@ -6,15 +6,22 @@ class Target {
 
 	draw() {
 		push();
+		ellipseMode(CENTER);
 		fill('white');
 		ellipse(this.x, this.y, this.radius);
-		fill('red');
+		if (this.inside(mouseX, mouseY)) {
+			fill('black');
+		} else {
+			fill('red');
+		}
 		ellipse(this.x, this.y, this.radius - 6);
 		pop();
 	}
 
 	update() {
-		this.radius -= 1;
+		if (score != 0) {
+			this.radius -= 1;
+		}
 
 		if (this.radius < 0) {
 			this.reset();
@@ -25,9 +32,13 @@ class Target {
 		}
 	}
 
+	inside(x, y) {
+		const d = dist(x, y, this.x, this.y);
+		return d < this.radius / 2;
+	}
+
 	hit() {
-		const distance = dist(this.x, this.y, mouseX, mouseY);
-		const isHit = distance < this.radius;
+		const isHit = this.inside(mouseX, mouseY);
 
 		if (isHit) {
 			score += map(this.radius, 0, this.r, 0.0, 1.0);
@@ -39,6 +50,7 @@ class Target {
 		} else {
 			saveScore();
 			score = 0;
+			this.reset();
 			return false;
 		}
 	}
